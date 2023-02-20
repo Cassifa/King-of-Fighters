@@ -19,8 +19,11 @@ export class Player extends AcGameObject{
         this.speedx=400;
         this.speedy=1000;
         this.gravity=50;
+
         this.hp=100;
-        this.power=50
+        this.power=20;
+        this.$hpred=this.root.$kof.find(`.kof-head-hp-${this.id}>div`);
+        this.$hp=this.$hpred.find(`div`);//绿色在内
 
         this.ctx=this.root.game_map.ctx;
         this.pressed_keys=this.root.game_map.controller.pressed_keys;
@@ -31,9 +34,7 @@ export class Player extends AcGameObject{
         //0：idle 1：向前 2：向后 3：跳跃 
         //4：攻击 5：被打 6：死亡
     }
-    start(){
-
-    }
+    start(){}
 
     update_move(){
         this.vy+=this.gravity;
@@ -123,11 +124,18 @@ export class Player extends AcGameObject{
         }
     }
 
-
     is_attack(){
         this.status=5;
         this.frame_current_cnt=0;
         this.hp=Math.max(0,this.hp-this.power);
+
+        this.$hp.animate({
+            width:this.$hp.parent().width()*(this.hp/100)
+        },300);
+        this.$hpred.animate({
+            width:this.$hp.parent().width()*(this.hp/100)
+        },500);
+
         if(this.hp===0){
             this.status=6;
             this.frame_current_cnt=0;
