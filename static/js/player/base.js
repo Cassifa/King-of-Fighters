@@ -139,6 +139,7 @@ export class Player extends AcGameObject{
         if(this.hp===0){
             this.status=6;
             this.frame_current_cnt=0;
+            this.vx=0;
         }
     }
 
@@ -201,7 +202,7 @@ export class Player extends AcGameObject{
         //     this.ctx.fillStyle='green';
         //     this.ctx.fillRect(this.x+this.width-120-100,this.y+40,100,30);
         // }
-
+        
         if(this.status===1&&this.direction*this.vx<0){
             this.status=2;
         }

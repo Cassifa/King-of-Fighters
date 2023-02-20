@@ -32,11 +32,25 @@ export class GameMap extends AcGameObject{
             </div>
         </div>
         `));
+        this.time=60000;
+        this.$timer=$(`.kof-head-timer`);
     }
     start(){
 
     }
     update(){
+        this.time-=this.timedelta;
+        if(this.time<0){
+            this.time=0;
+            let [a,b]=this.root.Players;
+            if(a.status!=6&&b.status!=6){
+                a.status=b.status=6;
+                a.frame_current_cnt=b.frame_current_cnt=0;
+                a.vx=b.vx=0;
+            }
+        }
+        this.$timer.text(parseInt(this.time/1000));
+
         this.render();
     }
     render(){
