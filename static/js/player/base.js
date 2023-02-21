@@ -164,7 +164,7 @@ export class Player extends AcGameObject{
                 r1={
                     x1:this.x+this.width-120-100,
                     y1:this.y+40,
-                    x2:this.x+this.width-120-100+10,
+                    x2:this.x+this.width-120-100+100,
                     y2:this.y+40+30,
                 }
             }
@@ -197,12 +197,12 @@ export class Player extends AcGameObject{
         // if(this.direction>0){
         //     this.ctx.fillStyle='green';
         //     this.ctx.fillRect(this.x+120,this.y+40,100,30);
-
+        
         // }else{
-        //     this.ctx.fillStyle='green';
+        //     this.ctx.fillStyle='orange';
         //     this.ctx.fillRect(this.x+this.width-120-100,this.y+40,100,30);
         // }
-        
+        //
         if(this.status===1&&this.direction*this.vx<0){
             this.status=2;
         }

@@ -40,9 +40,10 @@ export class GameMap extends AcGameObject{
     }
     update(){
         this.time-=this.timedelta;
+        let [a,b]=this.root.Players;
+        if(a.status===6||b.status===6)this.time+=this.timedelta;
         if(this.time<0){
             this.time=0;
-            let [a,b]=this.root.Players;
             if(a.status!=6&&b.status!=6){
                 a.status=b.status=6;
                 a.frame_current_cnt=b.frame_current_cnt=0;

@@ -5,12 +5,8 @@ class AcGameObject{
         this.timedelta=0;
         this.has_call_start=false;
     }
-    start(){
-
-    }
-    update(){
-
-    }
+    start(){}
+    update(){}
     destory(){
         for(let i in AC_GAME_OBJECTS){
             if(AC_GAME_OBJECTS[i]==this){
