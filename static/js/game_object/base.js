@@ -1,16 +1,16 @@
-let AC_GAME_OBJECTS=[];
+let GAME_OBJECTS=[];
 class AcGameObject{
     constructor(){
-        AC_GAME_OBJECTS.push(this);
+        GAME_OBJECTS.push(this);
         this.timedelta=0;
         this.has_call_start=false;
     }
     start(){}
     update(){}
     destory(){
-        for(let i in AC_GAME_OBJECTS){
-            if(AC_GAME_OBJECTS[i]==this){
-                AC_GAME_OBJECTS.splice(i,1);
+        for(let i in GAME_OBJECTS){
+            if(GAME_OBJECTS[i]==this){
+                GAME_OBJECTS.splice(i,1);
                 break;
             }
         }
@@ -19,7 +19,7 @@ class AcGameObject{
 
 let last_timestamp;
 let AC_GAME_OBJECT_FRAME=(timestamp)=>{
-    for(let obj of AC_GAME_OBJECTS){
+    for(let obj of GAME_OBJECTS){
         if(!obj.has_call_start){
             obj.start();
             obj.has_call_start=true;

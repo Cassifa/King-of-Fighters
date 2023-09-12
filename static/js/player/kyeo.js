@@ -15,7 +15,7 @@ export class Kyo extends Player{
             this.animations.set(i,{
                 gif:gif,
                 frame_cnt:0,//总图片数
-                frame_rate:5,//每5帧过渡一次
+                frame_rate:15,//每5帧过渡一次
                 offset_y:offsets[i],//y方向偏移量
                 loaded:false,//是否完成加载
                 scale:2,
@@ -25,7 +25,7 @@ export class Kyo extends Player{
                 let obj=outer.animations.get(i); 
                 obj.frame_cnt=gif.frames.length;
                 obj.loaded=true;
-                if(i==3)obj.frame_rate=4;  
+                if(i==3)obj.frame_rate=10;  
             }
         }
     }

@@ -1,4 +1,4 @@
-import {AcGameObject} from '/static/js/ac_game_object/base.js';
+import {AcGameObject} from '/static/js/game_object/base.js';
 import { Controller } from '../controller/base.js';
 
 export class GameMap extends AcGameObject{

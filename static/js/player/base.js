@@ -1,4 +1,4 @@
-import { AcGameObject } from "../ac_game_object/base.js";
+import { AcGameObject } from "../game_object/base.js";
 export class Player extends AcGameObject{
     constructor(root,info){
         super();
@@ -18,7 +18,7 @@ export class Player extends AcGameObject{
 
         this.speedx=400;
         this.speedy=1000;
-        this.gravity=50;
+        this.gravity=40;
 
         this.hp=100;
         this.power=20;
