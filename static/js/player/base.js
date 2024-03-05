@@ -124,7 +124,7 @@ export class Player extends AcGameObject{
         }
     }
 
-    is_attack(){
+    is_attack(){//受到攻击
         this.status=5;
         this.frame_current_cnt=0;
         this.hp=Math.max(0,this.hp-this.power);
@@ -143,13 +143,13 @@ export class Player extends AcGameObject{
         }
     }
 
-    is_collision(r1,r2){
+    is_collision(r1,r2){//碰撞检测
         if(Math.max(r1.x1,r2.x1)>Math.min(r1.x2,r2.x2))return false;
         if(Math.max(r1.y1,r2.y1)>Math.min(r1.y2,r2.y2))return false;
         return true;
     }
 
-    update_attack(){
+    update_attack(){//进行攻击
         if(this.status===4&&this.frame_current_cnt===18){
             let me=this,you=this.root.Players[1-this.id];
             let r1;

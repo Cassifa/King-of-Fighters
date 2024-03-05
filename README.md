@@ -1,4 +1,4 @@
-# KING OF FIGHT:单机拳击对抗小游戏
+# King of Fighters: 双人单机对抗小游戏
 
 ## 概述
 
@@ -16,19 +16,19 @@
 
 - 游戏开局
 
-![](https://git.acwing.com/Cassifa/img-folder/-/raw/main/KOF_images/01.png)
+![][start]
 
 - 玩家攻击
 
-![](https://git.acwing.com/Cassifa/img-folder/-/raw/main/KOF_images/03.png)
+![][attack]
 
 - 玩家胜利
 
-![](https://git.acwing.com/Cassifa/img-folder/-/raw/main/KOF_images/02.png)
+![][win]
 
 - 平局
 
-![](https://git.acwing.com/Cassifa/img-folder/-/raw/main/KOF_images/04.png)
+![][tie]
 
 
 
@@ -154,3 +154,10 @@ export class Controller{
   VSCode插件：Live Server 
 
 - 项目下载本地后右键"index.html"并选择"open with live Server"即可
+
+
+
+[start]: ./img/start.png
+[attack]: ./img/attack.png
+[win]:  ./img/win.png
+[tie]:  ./img/tie.png
